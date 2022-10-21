@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <tr>
+    <table class="table">
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>password</th>
+        <th>phn</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for i in viewreq %}
+    <form action="" method="POST">
+        {% csrf_token %}
+    <tr>
+        <th>{{i.id}} </th>
+        <th>{{i.name}}</th>
+        <th>{{i.email}}</th>
+        <th>{{i.password}}</th>
+        <th>{{i.phn}}</th>
+        <th ><button class="btn btn-success" name="approve" type="submit">Approve</button></th>
+
+        <th><input type="submit" class="btn btn-danger" name="reject" value="reject"></th>
+    <th><input type="hidden" name="id" value="{{i.id}}" id=""></th>
+
+    </tr>
+    </form>
+    {% endfor %}    
+    </table>
+
+    
+</body>
+</html>

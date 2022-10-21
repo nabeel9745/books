@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <table border="1" >
+        <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>email</th>
+        <th>password</th>
+        <th>phn</th>
+        <th>address</th>
+        <th>delete</th>
+        <th>Update</th>
+        </tr>
+        {% for i in viewform %}  
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.password}}</td>
+            <td>{{i.phn}}</td>
+            <td>{{i.address}}</td>
+        <th><a href="{% url 'dele' i.id %}">Delete</a></th>
+        <th><a href="{% url 'upd' i.id %}">Update</a></th>
+
+
+
+        </tr>  
+        {% endfor %}    
+    </table>
+</center>
+</body>
+</html>

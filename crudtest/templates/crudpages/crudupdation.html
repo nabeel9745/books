@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <center>
+
+    <form action="{% url 'editing' toupd.id %}" method="post">
+        {% csrf_token %}
+        <label for="">name</label>
+        <input type="text" name="e_name" value="{{toupd.name}}"><br><br>
+        <label for="">email</label>
+        <input type="email" name="e_email" value="{{toupd.email}}"><br><br>
+        <label for="">password</label>
+        <input type="password" name="e_password" value="{{toupd.password}}" ><br><br>
+        <label for="">phn</label>
+        <input type="text" name="e_phn" value="{{toupd.phn}}"><br><br>
+        <label for="">address</label>
+        <textarea name="e_address" id="" cols="30" rows="10">{{toupd.address}}</textarea><br><br>
+        <button>submit</button>
+  </center>
+</body>
+</html>

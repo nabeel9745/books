@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+  #my_p_table{
+    background-color: antiquewhite;
+    width: 890px; 
+  }
+</style>
+</head>
+<body onload="p_view()">
+    <table id="my_p_table" class="table table-success table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Property name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Landmark</th>
+            <th scope="col">city</th>
+            <th scope="col">stATE</th>
+            <th scope="col">Pincode</th>
+          </tr>
+
+          <script>
+           function p_view(){
+            $.ajax({
+              url:'p_view',
+              type:'GET',
+              success:function(response){
+                mm =response.display
+         $('.tbl_dsn').remove()
+         for(i=0;i<=mm.length;i++){
+          $('#my_p_table').append('<tr class="tbl_dsn"><td>'+ mm[i].v1 +'</td><td>'+ mm[i].v2 +'</td><td>'+ mm[i].v3 +'</td><td>'+ mm[i].v4 +'</td><td>'+ mm[i].v5 +'</td><td>'+ mm[i].v6 +'</td><td>'+ mm[i].v7 +'</td></tr>')  
+         }
+              }
+            })
+           }
+          </script>
+</body>
+</html>

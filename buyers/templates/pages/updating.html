@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- {{update_list.name}} -->
+    <form action="{% url 'editing'%}" method="post">
+        {% csrf_token %}
+        <label for="">name</label>
+        <input type="text" name="pro_name" value="{{update_list.pro_name}}"><br><br>
+        <label for="">price</label>
+        <input type="text" name="pro_price" value="{{update_list.pro_price}}"><br><br>
+        <label for="">type</label>
+        <input type="text" name="pro_type" value="{{update_list.pro_id}}"><br><br>
+        <label for="">quantity</label>
+        <input type="text" name="pro_quantity" value="{{update_list.pro_quantity}}"><br><br>
+        <input type="submit">
+    </form>
+
+    
+ 
+</body>
+</html>
