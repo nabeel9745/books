@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>mesage</h1>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}        
+        <label for="">name</label>
+        <input type="text" name="ms_name"><br><br>
+        <label for="">mesage</label>
+    <textarea name="msg" id="" cols="30" rows="10"></textarea>
+    <input type="submit">
+</form>
+<h1>{{sented}}</h1>
+</body>
+
+</html>

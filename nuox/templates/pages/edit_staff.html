@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><form action="{% url 'update_staff' v.id %}  " method="post">
+    {% csrf_token %}
+    <input name="f_name" class="form-control" type="text" placeholder="first name" value="{{v.f_name}}" >
+    <input name="l_name" class="form-control" type="text" placeholder="last name" value="{{v.l_name}}" >
+    <input name="email" class="form-control" type="email" placeholder="email" value="{{v.email}}" >
+    <input name="phn" class="form-control" type="number" placeholder="mob number" value="{{v.phone}}">
+    <input name="psd" class="form-control" type="text" placeholder="password"  value="{{v.password}}">
+    <br><br><button class="btn btn-success">submit</button>
+</form>
+</body>
+</html>

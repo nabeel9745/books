@@ -1,3 +1,5 @@
+from urllib import request
+from xml.dom.expatbuilder import Rejecter
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render,redirect
@@ -82,11 +84,12 @@ def re(request):
     if request.method=='POST':
         selected_req=big_form.objects.get(id=request.POST['id'])
         if 'approve' in request.POST:
-            selected_req.approved='approved'
+               selected_req.approved='accepted'
+     #    if request.method.POST.get('reject') == 'Rejected'                 
         if 'reject' in request.POST:
-            selected_req.approved='rejected'
+               selected_req.approved='rejected'
         selected_req.save()
-    return render (request,'htmlpages/request.html',{'viewreq':sample_request})
+    return render (request,'htmlpages/request.html',{'viewre':sample_request})
 
 def welcome(request):  
      return render(request,'htmlpages/welcom.html')
@@ -97,3 +100,12 @@ def info(request):
      
 def log_a(request):  
      return render(request,'htmlpages/admin_signup.html')
+
+def message(req):
+     if req.method == 'POST':
+          nam = req.POST['ms_name']
+          ms = req.POST['msg']
+          datas = contacts(msg_name=nam,message=ms).save()
+     return render(req,'htmlpages/message.html',{'sented':'message sented'})
+
+          

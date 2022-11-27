@@ -17,3 +17,8 @@ class input_property(models.Model):
     P_city=models.CharField(max_length=50)
     p_state=models.CharField(max_length=10)
     p_pincode=models.BigIntegerField()
+
+class contacts(models.Model):
+    msg_name = models.CharField(max_length=50)
+    message = models.CharField(max_length=100)
+    replay = models.CharField(max_length=100,default='')  

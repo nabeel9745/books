@@ -1,6 +1,8 @@
 from contextlib import redirect_stdout
 from urllib import request
 from django.shortcuts import render,redirect
+from sellers.models import contacts
+
 
 # Create your views here.
 
@@ -84,7 +86,19 @@ def accepted(request,id):
 #      else:
 #           return render(request,'crudpages/accepted.html')
 
-          
+def reply(req):
+     messages_are = contacts.objects.all()
+     return render(req,'crudpages/replay.html',{'v':messages_are})
+
+def real_replay(req):
+     if req.method == 'POST':
+          re = req.POST['reply']
+          store = contacts.objects.get(replay=re).save()
+     return render(req,'crudpages/replay.html')
+
+
+
+
 
  
 

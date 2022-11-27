@@ -9,8 +9,14 @@ urlpatterns=[
     path('editing/<int:id>',views.editing,name='editing'),
     path('log',views.log,name='log'),
     path('a',views.a,name='a'),
-    path('logout',views.logout,name='logout'),
+    # path('logout',views.logout,name='logout'),
     path('accepted/<int:id>',views.accepted,name='accepted'),
+    path('reply',views.reply,name='reply'),
+    path('real_replay',views.real_replay,name='real_replay'),
+
+
+    
+    
 
 
 

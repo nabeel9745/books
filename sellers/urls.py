@@ -19,6 +19,8 @@ urlpatterns=[
     path('re',views.re,name='re'),
     path('info',views.info,name='info'),
     path('log_a',views.log_a,name='log_a'),
+    path('message',views.message,name='message'),
+
 
 
 

@@ -10,7 +10,7 @@ urlpatterns=[
 path('reg',views.reg),
 path('seller',views.seller),
 path('show',views.show,name="show"),
-path('logout',views.logout,name="logout"),
+# path('logout',views.logout,name="logout"),
 path('login',views.login,name="login"),
 path('product',views.product,name="product"),
 path('p_show',views.p_show,name="p_show"),

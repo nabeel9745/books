@@ -22,10 +22,16 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('admin/',include('super.urls')),
      path('buyers/',include('buyers.urls')),
      path('sellers/',include('sellers.urls')),
      path('bookadmin/',include('bookadmin.urls')),
      path('crudtest/',include('crudtest.urls')),
+     path('nuox/',include('nuox.urls')),
+     path('googl/',include('googl.urls')),
+     path('accounts/', include('allauth.urls')),
+     path('super/',include('super.urls')),
+
 
 
 
