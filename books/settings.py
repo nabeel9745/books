@@ -43,14 +43,14 @@ INSTALLED_APPS = [
     'bookadmin',
     'crudtest',
     'googl',
-    'rest_framework',
+    'rest_framework',  
     'nuox',
+    'crispy_forms',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-
     # 'super',
 
 
@@ -71,7 +71,7 @@ ROOT_URLCONF = 'books.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,7 +103,7 @@ DATABASES = {
 }
 
 
-# Password validation
+# Password validation 
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -160,4 +160,20 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 2
 
-SOCIALACCOUNT_QUERY_EMAIL=True
+# SOCIALACCOUNT_QUERY_EMAIL=True
+SOCIALACCOUNT_PROVIDERS = {
+    'globus': {
+        'SCOPE': [
+            'openid',
+            'profile',
+            'email',
+            'urn:globus:auth:scope:transfer.api.globus.org:all'
+        ]
+    }
+}
+
+LOGIN_REDIRECT_URL = 'home'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
